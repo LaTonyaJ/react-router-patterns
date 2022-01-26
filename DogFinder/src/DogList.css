@@ -1,0 +1,12 @@
+img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: rgba(21, 21, 182, 0.671);
+}
