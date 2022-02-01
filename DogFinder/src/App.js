@@ -2,6 +2,7 @@ import './App.css';
 // import Nav from './Nav';
 import DogList from './DogList';
 import DogDetails from './DogDetails';
+import Nav from './Nav';
 import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
@@ -12,26 +13,26 @@ import tubby from './dogs/tubby.jpg';
 import perry from './dogs/perry.jpg';
 
 
-function App(props) {
+function App({dogs}) {
   return (
     <div className="App">
-    {/* <Nav name={props.dogs.name}/> */}
     <BrowserRouter>
+    <Nav dogs={dogs}/>
+
     <Switch>
       <Route exact path="/dogs" >
         <ErrorBoundary>
-          <DogList dogs={props.dogs}/>
+          <DogList dogs={dogs}/>
         </ErrorBoundary>
       </Route>
       <Route path="/dogs/:name" >
         <ErrorBoundary>
-          <DogDetails dogs={props.dogs} />
+          <DogDetails dogs={dogs} />
         </ErrorBoundary> 
       </Route> 
       <Redirect to="/dogs" />
     </Switch>
     </BrowserRouter>
-  
     </div>
   );
 }

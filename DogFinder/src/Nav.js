@@ -1,12 +1,17 @@
 import React from 'react';
+import './Nav.css';
 import {NavLink} from 'react-router-dom';
-import DogDetails from './DogDetails';
 
-function Nav(){
+function Nav(props){
     return(
-        <nav>
-            <NavLink to='/dogs/:name'>
-            </NavLink>
+        <nav className='dog-nav'>
+            {props.dogs.map((dog, i) =>
+            <li key={i}>
+                <NavLink to={`dogs/${dog.name}`}>
+                    {dog.name}
+                </NavLink>
+            </li>
+            )};
         </nav>
     );
 }

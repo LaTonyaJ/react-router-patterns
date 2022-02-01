@@ -1,0 +1,11 @@
+.dog-nav {
+  height: 50px;
+  background-color: beige;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  margin: 30px;
+  font-weight: bold;
+}
